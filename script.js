@@ -5,11 +5,17 @@
  **************/
 
 function updateCoffeeView(coffeeQty) {
-  // your code here
+  const coffeeCount = document.getElementById("coffee_counter");
+  coffeeCount.innerText = coffeeQty;
 }
 
 function clickCoffee(data) {
-  // your code here
+  if (data && typeof data.coffee === 'number'){
+    data.coffee += 1;
+
+    const coffeeCounter = document.getElementById('coffee_counter');
+    coffeeCounter.innerText = data.coffee;
+  }
 }
 
 /**************
@@ -17,16 +23,27 @@ function clickCoffee(data) {
  **************/
 
 function unlockProducers(producers, coffeeCount) {
-  // your code here
+  producers.forEach((producer)=> {
+    if (coffeeCount >= producer.price / 2){
+      producer.unlocked = true;
+    }
+  })
 }
 
 function getUnlockedProducers(data) {
-  // your code here
+  return data.producers.filter((producer) => producer.unlocked === true);
 }
 
 function makeDisplayNameFromId(id) {
-  // your code here
-}
+  const words = id.split('_');
+  
+  const titleCased = words.map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();}).join(' ');
+
+  return titleCased;
+};
+
+
 
 // You shouldn't need to edit this function-- its tests should pass once you've written makeDisplayNameFromId
 function makeProducerDiv(producer) {
@@ -50,7 +67,9 @@ function makeProducerDiv(producer) {
 }
 
 function deleteAllChildNodes(parent) {
-  // your code here
+  while (parent.firstChild){
+    parent.removeChild(parent.firstChild);
+  }
 }
 
 function renderProducers(data) {
