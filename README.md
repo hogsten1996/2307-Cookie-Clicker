@@ -1,8 +1,6 @@
-# DOM Homework
+# DOM Checkpoint
 
-Firstly, don't stress out that we will be using this homework to judge you in any way except to understand how we can better help you.
-
-We ask that you don't help each other or cheat. Use online resources to help your problem solving, but don't copy/paste answers to each other if you find something similar online.
+Firstly, don't stress out that we will be using this checkpoint to judge you in any way except to understand how we can better help you.
 
 ## Resources
 
